@@ -1,8 +1,0 @@
-Depends:
-R (≥ 3.5.0)
-['R (≥ 3.5.0)']
-['N']
-Imports:
-grDevices, graphics, stats, utils
-['grDevices', 'graphics', 'stats', 'utils']
-['N', 'N', 'N', 'N']
