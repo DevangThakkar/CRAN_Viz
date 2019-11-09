@@ -7,9 +7,9 @@ from pprint import pprint
 with open('cran_packages.json', 'r') as f:
 	data = json.load(f)
 
-depends_graph = nx.Graph()
-imports_graph = nx.Graph()
-suggests_graph = nx.Graph()
+depends_graph = nx.DiGraph()
+imports_graph = nx.DiGraph()
+suggests_graph = nx.DiGraph()
 
 for package in data:
 	depends_graph.add_node(package)
@@ -30,6 +30,8 @@ for package in data:
 	for item in suggests:
 		suggests_graph.add_edge(package, item)
 
+# write_dot(imports_graph, 'imports_graph.dot')
+# pprint(list(imports_graph.edges))
 
-write_dot(imports_graph, 'imports_graph.dot')
-pprint(list(imports_graph.edges))
+for node in imports_graph.nodes:
+	 print(node+': {}'.format(imports_graph.out_degree(node)))
