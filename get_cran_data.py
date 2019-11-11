@@ -84,7 +84,7 @@ def parse_home(link1, link2):
 	for link in webpage2.xpath('//a/@href'):
 		if 'html/' not in link or '.html' not in link:
 			continue
-		package = link.split('/')[1].replace(',html', '')
+		package = link.split('/')[1].replace('.html', '')
 		bioc_packages.append(package)
 	
 	i = 0

@@ -34,4 +34,4 @@ for package in data:
 # pprint(list(imports_graph.edges))
 
 for node in imports_graph.nodes:
-	 print(node+': {}'.format(imports_graph.out_degree(node)))
+	print(node+': {}'.format(imports_graph.in_degree(node)))
